@@ -154,8 +154,7 @@ extract(d,a,prefix,suffix)
 ![image](https://user-images.githubusercontent.com/71443958/147737891-b74889ac-032b-462f-9b8e-c9ccff279a14.png)
 
 
-
-#export PATH=/data/stdata/genomic/bioinfo2019/201941632216/inter/result/muscle:$PATH
+#export PATH=/data/stdata/genomic/bioinfo2019/201941632216/inter/muscle:$PATH
 
 #./muscle#使用muscle
 
