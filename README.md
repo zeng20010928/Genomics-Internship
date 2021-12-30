@@ -151,7 +151,8 @@ extract(d,a,prefix,suffix)
 
 #mv muscle3.8.31_i86linux64 muscle
 
-![image](https://user-images.githubusercontent.com/71443958/147737736-35b41b25-73ee-42f5-a8ab-ef977150225a.png)
+![image](https://user-images.githubusercontent.com/71443958/147737891-b74889ac-032b-462f-9b8e-c9ccff279a14.png)
+
 
 
 #export PATH=/data/stdata/genomic/bioinfo2019/201941632216/inter/result/muscle:$PATH
