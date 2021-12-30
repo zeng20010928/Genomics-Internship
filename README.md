@@ -143,14 +143,21 @@ extract(d,a,prefix,suffix)
 
 ### 2.2 多序列比对
 关于muscle在Linux上的下载
-wget http://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64.tar.gz
-tar -zxvf muscle3.8.31_i86linux64.tar.gz
-chmod +x muscle3.8.31_i86linux64
-mv muscle3.8.31_i86linux64 muscle
-![image](https://user-images.githubusercontent.com/71443958/147737613-31b13fe8-c63a-4f91-9f40-2ff0c4b3a4ad.png)
+#wget http://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64.tar.gz
 
-export PATH=/data/stdata/genomic/bioinfo2019/201941632216/inter/result/muscle:$PATH
-./muscle#使用muscle
+#tar -zxvf muscle3.8.31_i86linux64.tar.gz
+
+#chmod +x muscle3.8.31_i86linux64
+
+#mv muscle3.8.31_i86linux64 muscle
+
+![image](https://user-images.githubusercontent.com/71443958/147737736-35b41b25-73ee-42f5-a8ab-ef977150225a.png)
+
+
+#export PATH=/data/stdata/genomic/bioinfo2019/201941632216/inter/result/muscle:$PATH
+
+#./muscle#使用muscle
+
 使用shell脚本建立一个循环,对每个单拷贝基因家族进行多序列比对
 ```sh
 #!/bin/bash
