@@ -163,6 +163,7 @@ for file in $(ls $dir | grep .${oldsuffix}) #构建循环
         ./muscle -in ${file} -out ${name}.${newsuffix} #muscle运行多序列比对
 	echo ${name}-${str}
 	rm ${name}.${oldsuffix}
+	if 
 	tar -crf ${name:0:3}.${pack} ls*.{newsuffix} #打包文件
     done
 echo ${str}
