@@ -180,11 +180,11 @@ for file in $(ls $dir | grep .${oldsuffix}) #构建循环
 	echo ${name}-${str}
 	rm ${name}.${oldsuffix}
 	if [ ! -f "/data/stdata/genomic/bioinfo2019/201941632216/inter/excel/${name:0:3}.${pack}" ];then #判断文件是否存在
-                tar -cf ${name:0:3}.${pack} ls*.${newsuffix} #若文件不存在则创建压缩包
+                tar -cf ${name:0:3}.${pack} ls *.${newsuffix} #若文件不存在则创建压缩包
         else
                 echo "文件存在"
         fi
-	tar -crf ${name:0:3}.${pack} ls*.${newsuffix} #打包文件,将单个文件压缩进压缩包
+	tar -crf ${name:0:3}.${pack} ls *.${newsuffix} #打包文件,将单个文件压缩进压缩包
 	rm -rf ${name}.${newsuffix} #删除多序列比对多余结果
     done
 echo ${str}
