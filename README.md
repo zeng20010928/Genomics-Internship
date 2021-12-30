@@ -38,6 +38,8 @@ cut -f 1,2,12 allBlast.tsv > allBlast.abc
 ```
 结果图
 ![image](https://user-images.githubusercontent.com/71910521/147726397-ffd63ff8-8f49-4291-9726-8bf5eb694034.png)
+
+
 ### 1.4 用mcl进行聚类
 在集群上需要在老师的代码里加点东西
 work_mcl.sh
@@ -82,8 +84,12 @@ print("同学，一共{}个单拷贝基因家族".format(n))
 ```
 根据上述代码知道dump.data.mci.I20和dump.datt.mci.I40中的单拷贝基因家族分别为72个，21个，且会生成两个包含单拷贝基因家族的文件dump.data.mci.I-20和dump.data.mci.I-40
 ![image](https://user-images.githubusercontent.com/71910521/147727331-a035bd02-2c0d-4941-adff-d3d9546a3712.png)
+
+
 dump.data.mci.I-20，如上图一行为一个单拷贝基因家族一共72行
 ![image](https://user-images.githubusercontent.com/71910521/147727487-4e02e34c-1d50-4b4a-acbd-fc953cdbc267.png)
+
+
 dump.data.mci.I-40，如上图
 ## 2.构建物种进化树
 ### 2.1 提取单拷贝基因家族的基因序列 
@@ -128,6 +134,8 @@ extract(d,a,prefix,suffix)
 会得到等于单拷贝基因家族数的序列文件。
 例：I40的家族成员序列文件
 ![image](https://user-images.githubusercontent.com/71910521/147728152-a52ab908-4335-46d0-b86f-9d270c80189f.png)
+
+
 注：为什么要选择单拷贝基因？
 一般是用单拷贝的直系同源基因研究系统发生。我个人理解，不一定完全准确。
 1.相对于全基因组减少计算量
@@ -161,10 +169,16 @@ echo ${str}
 ```
 I20的多序列比对后的结果文件数量
 ![image](https://user-images.githubusercontent.com/71910521/147729055-6cad902c-5e80-4c52-bf6e-3c686bf41606.png)
+
+
 文件内容（只取了其中一个），经过多序列比对之后会将不等长的序列使用gap填充，使之等长。
 ![image](https://user-images.githubusercontent.com/71910521/147729214-df61789e-fd85-45b7-bd8f-2c0c13d35fee.png)
+
+
 I40的多序列比对后的结果文件数量
 ![image](https://user-images.githubusercontent.com/71910521/147730200-54c0769b-6a17-467a-ad6b-10733fb5bf98.png)
+
+
 文件内容
 ![image](https://user-images.githubusercontent.com/71910521/147730315-f1fef09e-0a2f-402e-a25c-4f76ef782fbf.png)
 ### 2.3 比对后序列合并  
@@ -225,6 +239,11 @@ if __name__ == '__main__':
     merge_seq(name, after_mergefile, I_filename)
 ```
 分别运行完上述代码后得到两种聚类分别合并后的文件all_I20.faa和all_I40.faa
+文件内容如图
+all_I20.faa（部分）
+![image](https://user-images.githubusercontent.com/71910521/147731455-833040a0-bdff-4a4f-a6b4-b487a250d21e.png)
+all_I40.faa（部分）
+![image](https://user-images.githubusercontent.com/71910521/147731597-c7ffb052-8f63-4909-8172-b3ac5abd98d9.png)
 
 ### 2.4 构建进化树
 集群上有FastTree软件，可直接使用fastree protein_alignment > tree
