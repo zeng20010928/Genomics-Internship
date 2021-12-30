@@ -142,6 +142,8 @@ extract(d,a,prefix,suffix)
 2.减少旁系同源基因对序列比对和后来进化树的影响。
 
 ### 2.2 多序列比对
+关于muscle的使用
+
 使用shell脚本建立一个循环,对每个单拷贝基因家族进行多序列比对
 ```sh
 #!/bin/bash
@@ -163,8 +165,13 @@ for file in $(ls $dir | grep .${oldsuffix}) #构建循环
         ./muscle -in ${file} -out ${name}.${newsuffix} #muscle运行多序列比对
 	echo ${name}-${str}
 	rm ${name}.${oldsuffix}
-	if 
-	tar -crf ${name:0:3}.${pack} ls*.{newsuffix} #打包文件
+	if [ ! -f "/data/stdata/genomic/bioinfo2019/201941632216/inter/excel/${name:0:3}.${pack}" ];then #判断文件是否存在
+                tar -cf ${name:0:3}.${pack} ls*.${newsuffix} #若文件不存在则创建压缩包
+        else
+                echo "文件存在"
+        fi
+	tar -crf ${name:0:3}.${pack} ls*.{newsuffix} #打包文件,将单个文件压缩进压缩包
+	rm -rf ${name}.${newsuffix} #删除多序列比对多余结果
     done
 echo ${str}
 ```
